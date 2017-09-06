@@ -10,9 +10,9 @@ A sample vehicle dealer single-page application built with Angular 4, ASP.NET Co
 ## To run the project:
 
 >'$ npm install`
-`$ dotnet restore`
-`$ dotnet user-secrets set ConnectionStrings:Default "<YOUR CONNETION STRING>"`
-`$ webpack --config webpack.config.vendor.js`
-`$ webpack`
-`$ dotnet ef database update`
-`$ dotnet watch run`
+>`$ dotnet restore`
+>`$ dotnet user-secrets set ConnectionStrings:Default "<YOUR CONNETION STRING>"`
+>`$ webpack --config webpack.config.vendor.js`
+> `$ webpack`
+> `$ dotnet ef database update`
+> `$ dotnet watch run`
