@@ -1,0 +1,10 @@
+/home/smn/Desktop/vega/bin/Debug/netcoreapp2.0/vega.deps.json
+/home/smn/Desktop/vega/bin/Debug/netcoreapp2.0/vega.runtimeconfig.json
+/home/smn/Desktop/vega/bin/Debug/netcoreapp2.0/vega.runtimeconfig.dev.json
+/home/smn/Desktop/vega/bin/Debug/netcoreapp2.0/vega.dll
+/home/smn/Desktop/vega/bin/Debug/netcoreapp2.0/vega.pdb
+/home/smn/Desktop/vega/obj/Debug/netcoreapp2.0/vega.csproj.CoreCompileInputs.cache
+/home/smn/Desktop/vega/obj/Debug/netcoreapp2.0/vega.AssemblyInfoInputs.cache
+/home/smn/Desktop/vega/obj/Debug/netcoreapp2.0/vega.AssemblyInfo.cs
+/home/smn/Desktop/vega/obj/Debug/netcoreapp2.0/vega.dll
+/home/smn/Desktop/vega/obj/Debug/netcoreapp2.0/vega.pdb
