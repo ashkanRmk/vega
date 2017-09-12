@@ -24,6 +24,7 @@
       "vega/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.All": "2.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "2.0.0",
           "Microsoft.NETCore.App": "2.0.0"
         },
         "runtime": {
