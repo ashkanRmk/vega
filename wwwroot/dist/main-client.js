@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "6d77a51f137755f6915b"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "8fcf950a64d6e18ddd85"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -864,7 +864,7 @@ var FeatureService = (function () {
     }
     FeatureService.prototype.getFeatures = function () {
         return this.http.get('/api/features')
-            .map(function (res) { return res.json; });
+            .map(function (res) { return res.json(); });
     };
     FeatureService = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
