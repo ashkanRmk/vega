@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "8fcf950a64d6e18ddd85"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "1f46476e108923d68ca0"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -837,84 +837,8 @@ var AppComponent = (function () {
 
 
 /***/ }),
-/* 5 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FeatureService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var FeatureService = (function () {
-    function FeatureService(http) {
-        this.http = http;
-    }
-    FeatureService.prototype.getFeatures = function () {
-        return this.http.get('/api/features')
-            .map(function (res) { return res.json(); });
-    };
-    FeatureService = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]])
-    ], FeatureService);
-    return FeatureService;
-}());
-
-
-
-/***/ }),
-/* 6 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MakeService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var MakeService = (function () {
-    function MakeService(http) {
-        this.http = http;
-    }
-    MakeService.prototype.getMakes = function () {
-        return this.http.get('/api/makes')
-            .map(function (res) { return res.json(); });
-    };
-    MakeService = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]])
-    ], MakeService);
-    return MakeService;
-}());
-
-
-
-/***/ }),
+/* 5 */,
+/* 6 */,
 /* 7 */
 /***/ (function(module, exports) {
 
@@ -1671,19 +1595,18 @@ function getBaseUrl() {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModuleShared; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_feature_service__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_app_app_component__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_navmenu_navmenu_component__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_home_home_component__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_fetchdata_fetchdata_component__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_counter_counter_component__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_vehicle_form_vehicle_form_component__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_make_service__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_app_app_component__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_navmenu_navmenu_component__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_home_home_component__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_fetchdata_fetchdata_component__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_counter_counter_component__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_vehicle_form_vehicle_form_component__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_vehicle_service__ = __webpack_require__(56);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1702,36 +1625,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
 var AppModuleShared = (function () {
     function AppModuleShared() {
     }
     AppModuleShared = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_6__components_app_app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_7__components_navmenu_navmenu_component__["a" /* NavMenuComponent */],
-                __WEBPACK_IMPORTED_MODULE_10__components_counter_counter_component__["a" /* CounterComponent */],
-                __WEBPACK_IMPORTED_MODULE_9__components_fetchdata_fetchdata_component__["a" /* FetchDataComponent */],
-                __WEBPACK_IMPORTED_MODULE_8__components_home_home_component__["a" /* HomeComponent */],
-                __WEBPACK_IMPORTED_MODULE_11__components_vehicle_form_vehicle_form_component__["a" /* VehicleFormComponent */]
+                __WEBPACK_IMPORTED_MODULE_5__components_app_app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_6__components_navmenu_navmenu_component__["a" /* NavMenuComponent */],
+                __WEBPACK_IMPORTED_MODULE_9__components_counter_counter_component__["a" /* CounterComponent */],
+                __WEBPACK_IMPORTED_MODULE_8__components_fetchdata_fetchdata_component__["a" /* FetchDataComponent */],
+                __WEBPACK_IMPORTED_MODULE_7__components_home_home_component__["a" /* HomeComponent */],
+                __WEBPACK_IMPORTED_MODULE_10__components_vehicle_form_vehicle_form_component__["a" /* VehicleFormComponent */]
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_2__angular_common__["CommonModule"],
-                __WEBPACK_IMPORTED_MODULE_4__angular_http__["HttpModule"],
-                __WEBPACK_IMPORTED_MODULE_3__angular_forms__["FormsModule"],
-                __WEBPACK_IMPORTED_MODULE_5__angular_router__["RouterModule"].forRoot([
+                __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
+                __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["FormsModule"],
+                __WEBPACK_IMPORTED_MODULE_4__angular_router__["RouterModule"].forRoot([
                     { path: '', redirectTo: 'home', pathMatch: 'full' },
-                    { path: 'home', component: __WEBPACK_IMPORTED_MODULE_8__components_home_home_component__["a" /* HomeComponent */] },
-                    { path: 'vehicles/new', component: __WEBPACK_IMPORTED_MODULE_11__components_vehicle_form_vehicle_form_component__["a" /* VehicleFormComponent */] },
-                    { path: 'counter', component: __WEBPACK_IMPORTED_MODULE_10__components_counter_counter_component__["a" /* CounterComponent */] },
-                    { path: 'fetch-data', component: __WEBPACK_IMPORTED_MODULE_9__components_fetchdata_fetchdata_component__["a" /* FetchDataComponent */] },
+                    { path: 'home', component: __WEBPACK_IMPORTED_MODULE_7__components_home_home_component__["a" /* HomeComponent */] },
+                    { path: 'vehicles/new', component: __WEBPACK_IMPORTED_MODULE_10__components_vehicle_form_vehicle_form_component__["a" /* VehicleFormComponent */] },
+                    { path: 'counter', component: __WEBPACK_IMPORTED_MODULE_9__components_counter_counter_component__["a" /* CounterComponent */] },
+                    { path: 'fetch-data', component: __WEBPACK_IMPORTED_MODULE_8__components_fetchdata_fetchdata_component__["a" /* FetchDataComponent */] },
                     { path: '**', redirectTo: 'home' },
                 ])
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_12__services_make_service__["a" /* MakeService */],
-                __WEBPACK_IMPORTED_MODULE_0__services_feature_service__["a" /* FeatureService */]
+                __WEBPACK_IMPORTED_MODULE_11__services_vehicle_service__["a" /* VehicleService */]
             ]
         })
     ], AppModuleShared);
@@ -1877,9 +1798,8 @@ var NavMenuComponent = (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VehicleFormComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_feature_service__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_make_service__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_vehicle_service__ = __webpack_require__(56);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1891,19 +1811,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
 var VehicleFormComponent = (function () {
-    function VehicleFormComponent(makeService, featureService) {
-        this.makeService = makeService;
-        this.featureService = featureService;
+    function VehicleFormComponent(vehicleService) {
+        this.vehicleService = vehicleService;
         this.vehicle = {};
     }
     VehicleFormComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.makeService.getMakes().subscribe(function (makes) {
+        this.vehicleService.getMakes().subscribe(function (makes) {
             return _this.makes = makes;
         });
-        this.featureService.getFeatures().subscribe(function (features) {
+        this.vehicleService.getFeatures().subscribe(function (features) {
             return _this.features = features;
         });
     };
@@ -1913,13 +1831,12 @@ var VehicleFormComponent = (function () {
         this.models = selectedMake ? selectedMake.models : [];
     };
     VehicleFormComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-vehicle-form',
             template: __webpack_require__(32),
             styles: [__webpack_require__(40)]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__services_make_service__["a" /* MakeService */],
-            __WEBPACK_IMPORTED_MODULE_0__services_feature_service__["a" /* FeatureService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_vehicle_service__["a" /* VehicleService */]])
     ], VehicleFormComponent);
     return VehicleFormComponent;
 }());
@@ -4034,6 +3951,49 @@ module.exports = (__webpack_require__(0))(9);
 __webpack_require__(11);
 __webpack_require__(10);
 module.exports = __webpack_require__(9);
+
+
+/***/ }),
+/* 56 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VehicleService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var VehicleService = (function () {
+    function VehicleService(http) {
+        this.http = http;
+    }
+    VehicleService.prototype.getFeatures = function () {
+        return this.http.get('/api/features')
+            .map(function (res) { return res.json(); });
+    };
+    VehicleService.prototype.getMakes = function () {
+        return this.http.get('/api/makes')
+            .map(function (res) { return res.json(); });
+    };
+    VehicleService = __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]])
+    ], VehicleService);
+    return VehicleService;
+}());
+
 
 
 /***/ })
