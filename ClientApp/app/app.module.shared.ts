@@ -1,3 +1,4 @@
+import { FeatureService } from './services/feature.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -36,7 +37,8 @@ import { MakeService } from './services/make.service'
         ])
     ],
     providers: [
-        MakeService
+        MakeService,
+        FeatureService
     ]
 })
 export class AppModuleShared {
