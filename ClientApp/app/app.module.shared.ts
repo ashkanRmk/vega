@@ -36,7 +36,7 @@ import { VehicleService } from './services/vehicle.service'
         ])
     ],
     providers: [
-        VehicleService
+        VehicleService  
     ]
 })
 export class AppModuleShared {
