@@ -14,26 +14,34 @@ namespace vega
     {
         public static void Main(string[] args)
         {
-            var config = new ConfigurationBuilder()
-            .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("hosting.json", optional: true)
-            .Build();
+            // var config = new ConfigurationBuilder()
+            // .SetBasePath(Directory.GetCurrentDirectory())
+            // .AddJsonFile("hosting.json", optional: true)
+            // .Build();
 
-            var host = new WebHostBuilder()
-                .UseKestrel()
-                .UseConfiguration(config)
-                .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseIISIntegration()
-                .UseStartup<Startup>()
-                .Build();
+            // var host = new WebHostBuilder()
+            //     .UseKestrel()
+            //     .UseConfiguration(config)
+            //     .UseContentRoot(Directory.GetCurrentDirectory())
+            //     .UseIISIntegration()
+            //     .UseStartup<Startup>()
+            //     .Build();
 
-            host.Run();
-            // BuildWebHost(args).Run();
+            // host.Run();
+            BuildWebHost(args).Run();
         }
 
-    //     public static IWebHost BuildWebHost(string[] args) =>
-    //         WebHost.CreateDefaultBuilder(args)
-    //             .UseStartup<Startup>()
-    //             .Build();
+        public static IWebHost BuildWebHost(string[] args)
+        {
+            var config = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("hosting.json", optional: true)
+                .Build();
+
+            return WebHost.CreateDefaultBuilder(args)
+                .UseConfiguration(config)
+                .UseStartup<Startup>()
+                .Build();
+        }
     }
 }
