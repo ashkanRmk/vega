@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using vega.Core.Models;
+using vega.Core;
 
 namespace vega.Core
 {
