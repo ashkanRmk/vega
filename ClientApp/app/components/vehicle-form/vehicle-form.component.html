@@ -33,15 +33,15 @@
     <h2>Contact</h2>
     <div class="form-group ">
         <label for="contactName">Name</label>
-        <input id="contactName" placeholder="Name" type="text" class="form-control">
+        <input id="contactName" placeholder="Name" type="text" class="form-control" [(ngModel)]="vehicle.contact.name" name="contactName">
     </div>
     <div class="form-group ">
         <label for="contactPhone">Phone</label>
-        <input id="contactPhone" placeholder="Phone Number" type="tel" class="form-control">
+        <input id="contactPhone" placeholder="Phone Number" type="tel" class="form-control" [(ngModel)]="vehicle.contact.phone" name="contactPhone">
     </div>
     <div class="form-group ">
         <label for="contactEmail">E-mail</label>
-        <input id="contactEmail" placeholder="E-mail" type="email" class="form-control">
+        <input id="contactEmail" placeholder="E-mail" type="email" class="form-control" [(ngModel)]="vehicle.contact.email" name="contactEmail">
     </div>
     <button class="btn btn-primary">Save</button>
 </form>
