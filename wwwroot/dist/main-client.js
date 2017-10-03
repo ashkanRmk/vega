@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "50539f89d89e9843a124"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "aa944d9590697ed79887"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -1608,20 +1608,25 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 
 
 var AppErrorHandler = (function () {
-    function AppErrorHandler(toastyService) {
+    function AppErrorHandler(ngZOne, toastyService) {
+        this.ngZOne = ngZOne;
         this.toastyService = toastyService;
     }
     AppErrorHandler.prototype.handleError = function (error) {
-        this.toastyService.error({
-            title: 'Error',
-            msg: 'An unexpected error happened.',
-            theme: 'bootstrap',
-            timeout: 5000
+        var _this = this;
+        this.ngZOne.run(function () {
+            _this.toastyService.error({
+                title: 'Error',
+                msg: 'An unexpected error happened.',
+                theme: 'bootstrap',
+                timeout: 5000
+            });
         });
     };
     AppErrorHandler = __decorate([
-        __param(0, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Inject"])(__WEBPACK_IMPORTED_MODULE_0_ng2_toasty__["ToastyService"])),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ng2_toasty__["ToastyService"]])
+        __param(1, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Inject"])(__WEBPACK_IMPORTED_MODULE_0_ng2_toasty__["ToastyService"])),
+        __metadata("design:paramtypes", [NgZone,
+            __WEBPACK_IMPORTED_MODULE_0_ng2_toasty__["ToastyService"]])
     ], AppErrorHandler);
     return AppErrorHandler;
 }());
