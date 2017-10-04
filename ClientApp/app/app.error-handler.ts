@@ -4,9 +4,10 @@ import { ErrorHandler, Inject, NgZone } from "@angular/core";
 
 export class AppErrorHandler implements ErrorHandler {
     constructor(
-        private ngZOne: NgZone,
+        @Inject(NgZone) private ngZOne: NgZone,
         @Inject(ToastyService) private toastyService: ToastyService) {
     }
+    
     handleError(error: any): void {
         this.ngZOne.run(() => {
             this.toastyService.error({
