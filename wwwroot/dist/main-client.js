@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "652643ac614610e80529"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "71c9d4780786be5f8582"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -1651,13 +1651,11 @@ var AppErrorHandler = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* unused harmony export getBaseUrl */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_raven_js__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_raven_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_raven_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_error_handler__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_module_shared__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_app_app_component__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_error_handler__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_module_shared__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_app_app_component__ = __webpack_require__(5);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1669,23 +1667,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
-/* Raven Configuration at sentry.io */
-__WEBPACK_IMPORTED_MODULE_0_raven_js__["config"]('https://554c59060e954d4296333e598654fef5@sentry.io/225953')
-    .install();
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["NgModule"])({
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_5__components_app_app_component__["a" /* AppComponent */]],
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_4__components_app_app_component__["a" /* AppComponent */]],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["BrowserModule"],
-                __WEBPACK_IMPORTED_MODULE_4__app_module_shared__["a" /* AppModuleShared */]
+                __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["BrowserModule"],
+                __WEBPACK_IMPORTED_MODULE_3__app_module_shared__["a" /* AppModuleShared */]
             ],
             providers: [
                 { provide: 'BASE_URL', useFactory: getBaseUrl },
-                { provide: __WEBPACK_IMPORTED_MODULE_2__angular_core__["ErrorHandler"], useClass: __WEBPACK_IMPORTED_MODULE_1__app_error_handler__["a" /* AppErrorHandler */] },
+                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ErrorHandler"], useClass: __WEBPACK_IMPORTED_MODULE_0__app_error_handler__["a" /* AppErrorHandler */] },
             ]
         })
     ], AppModule);
@@ -1703,19 +1697,21 @@ function getBaseUrl() {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModuleShared; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_toasty__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_app_app_component__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_navmenu_navmenu_component__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_home_home_component__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_fetchdata_fetchdata_component__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_counter_counter_component__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_vehicle_form_vehicle_form_component__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_vehicle_service__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_raven_js__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_raven_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_raven_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ng2_toasty__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_app_app_component__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_navmenu_navmenu_component__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_fetchdata_fetchdata_component__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_counter_counter_component__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_vehicle_form_vehicle_form_component__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_vehicle_service__ = __webpack_require__(6);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1735,35 +1731,39 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+/* Raven Configuration at sentry.io */
+__WEBPACK_IMPORTED_MODULE_0_raven_js__["config"]('https://554c59060e954d4296333e598654fef5@sentry.io/225953')
+    .install();
 var AppModuleShared = (function () {
     function AppModuleShared() {
     }
     AppModuleShared = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_6__components_app_app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_7__components_navmenu_navmenu_component__["a" /* NavMenuComponent */],
-                __WEBPACK_IMPORTED_MODULE_10__components_counter_counter_component__["a" /* CounterComponent */],
-                __WEBPACK_IMPORTED_MODULE_9__components_fetchdata_fetchdata_component__["a" /* FetchDataComponent */],
-                __WEBPACK_IMPORTED_MODULE_8__components_home_home_component__["a" /* HomeComponent */],
-                __WEBPACK_IMPORTED_MODULE_11__components_vehicle_form_vehicle_form_component__["a" /* VehicleFormComponent */]
+                __WEBPACK_IMPORTED_MODULE_7__components_app_app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_8__components_navmenu_navmenu_component__["a" /* NavMenuComponent */],
+                __WEBPACK_IMPORTED_MODULE_11__components_counter_counter_component__["a" /* CounterComponent */],
+                __WEBPACK_IMPORTED_MODULE_10__components_fetchdata_fetchdata_component__["a" /* FetchDataComponent */],
+                __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__["a" /* HomeComponent */],
+                __WEBPACK_IMPORTED_MODULE_12__components_vehicle_form_vehicle_form_component__["a" /* VehicleFormComponent */]
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
-                __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["FormsModule"],
-                __WEBPACK_IMPORTED_MODULE_5_ng2_toasty__["ToastyModule"].forRoot(),
-                __WEBPACK_IMPORTED_MODULE_4__angular_router__["RouterModule"].forRoot([
+                __WEBPACK_IMPORTED_MODULE_2__angular_common__["CommonModule"],
+                __WEBPACK_IMPORTED_MODULE_4__angular_http__["HttpModule"],
+                __WEBPACK_IMPORTED_MODULE_3__angular_forms__["FormsModule"],
+                __WEBPACK_IMPORTED_MODULE_6_ng2_toasty__["ToastyModule"].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_5__angular_router__["RouterModule"].forRoot([
                     { path: '', redirectTo: 'home', pathMatch: 'full' },
-                    { path: 'home', component: __WEBPACK_IMPORTED_MODULE_8__components_home_home_component__["a" /* HomeComponent */] },
-                    { path: 'vehicles/new', component: __WEBPACK_IMPORTED_MODULE_11__components_vehicle_form_vehicle_form_component__["a" /* VehicleFormComponent */] },
-                    { path: 'counter', component: __WEBPACK_IMPORTED_MODULE_10__components_counter_counter_component__["a" /* CounterComponent */] },
-                    { path: 'fetch-data', component: __WEBPACK_IMPORTED_MODULE_9__components_fetchdata_fetchdata_component__["a" /* FetchDataComponent */] },
+                    { path: 'home', component: __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__["a" /* HomeComponent */] },
+                    { path: 'vehicles/new', component: __WEBPACK_IMPORTED_MODULE_12__components_vehicle_form_vehicle_form_component__["a" /* VehicleFormComponent */] },
+                    { path: 'counter', component: __WEBPACK_IMPORTED_MODULE_11__components_counter_counter_component__["a" /* CounterComponent */] },
+                    { path: 'fetch-data', component: __WEBPACK_IMPORTED_MODULE_10__components_fetchdata_fetchdata_component__["a" /* FetchDataComponent */] },
                     { path: '**', redirectTo: 'home' },
                 ])
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_12__services_vehicle_service__["a" /* VehicleService */]
+                __WEBPACK_IMPORTED_MODULE_13__services_vehicle_service__["a" /* VehicleService */]
             ]
         })
     ], AppModuleShared);

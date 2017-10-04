@@ -1,3 +1,5 @@
+import * as Raven from 'raven-js';
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -13,6 +15,10 @@ import { CounterComponent } from './components/counter/counter.component';
 import { VehicleFormComponent } from "./components/vehicle-form/vehicle-form.component";
 import { VehicleService } from './services/vehicle.service'
 
+/* Raven Configuration at sentry.io */
+Raven
+    .config('https://554c59060e954d4296333e598654fef5@sentry.io/225953')
+    .install();
 
 
 @NgModule({
@@ -39,7 +45,7 @@ import { VehicleService } from './services/vehicle.service'
         ])
     ],
     providers: [
-        VehicleService  
+        VehicleService
     ]
 })
 export class AppModuleShared {
