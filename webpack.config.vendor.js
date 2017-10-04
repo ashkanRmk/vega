@@ -13,6 +13,7 @@ const treeShakableModules = [
     '@angular/platform-browser-dynamic',
     '@angular/router',
     'zone.js',
+    'raven-js'
 ];
 const nonTreeShakableModules = [
     'bootstrap',
