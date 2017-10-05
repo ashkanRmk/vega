@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "8bc6ada109df10b89bbe"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "e9af13f546bbfaccd4e4"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -1921,6 +1921,10 @@ var NavMenuComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_vehicle_service__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_toasty__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Observable__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_Observable__);
+throw new Error("Cannot find module \"rxjs/add/Observable/forkJoin\"");
+throw new Error("Cannot find module \"rxjs/add/Observable/forkJoin\"");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1930,6 +1934,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
+
 
 
 
@@ -1951,18 +1958,20 @@ var VehicleFormComponent = (function () {
     }
     VehicleFormComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.vehicleService.getVehicle(this.vehicle.id)
-            .subscribe(function (v) {
-            _this.vehicle = v;
+        var sources = [
+            this.vehicleService.getMakes(),
+            this.vehicleService.getFeatures()
+        ];
+        if (this.vehicle.id)
+            sources.push(this.vehicleService.getVehicle(this.vehicle.id));
+        __WEBPACK_IMPORTED_MODULE_4_rxjs_Observable__["Observable"].forkJoin(sources).subscribe(function (data) {
+            _this.makes = data[0];
+            _this.features = data[1];
+            if (_this.vehicle.id)
+                _this.vehicle = data[2];
         }, function (err) {
             if (err.status == 404)
                 _this.router.navigate(['/home']);
-        });
-        this.vehicleService.getMakes().subscribe(function (makes) {
-            return _this.makes = makes;
-        });
-        this.vehicleService.getFeatures().subscribe(function (features) {
-            return _this.features = features;
         });
     };
     VehicleFormComponent.prototype.onMakeChange = function () {
