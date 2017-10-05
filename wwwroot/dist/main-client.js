@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "0635fd48fc81057f8fac"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "8bc6ada109df10b89bbe"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -878,6 +878,10 @@ var VehicleService = (function () {
     };
     VehicleService.prototype.create = function (vehicle) {
         return this.http.post('/api/vehicles', vehicle)
+            .map(function (res) { return res.json(); });
+    };
+    VehicleService.prototype.getVehicle = function (id) {
+        return this.http.get('/api/vehicles/' + id)
             .map(function (res) { return res.json(); });
     };
     VehicleService = __decorate([
@@ -1760,6 +1764,7 @@ var AppModuleShared = (function () {
                     { path: '', redirectTo: 'home', pathMatch: 'full' },
                     { path: 'home', component: __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__["a" /* HomeComponent */] },
                     { path: 'vehicles/new', component: __WEBPACK_IMPORTED_MODULE_12__components_vehicle_form_vehicle_form_component__["a" /* VehicleFormComponent */] },
+                    { path: 'vehicles/:id', component: __WEBPACK_IMPORTED_MODULE_12__components_vehicle_form_vehicle_form_component__["a" /* VehicleFormComponent */] },
                     { path: 'counter', component: __WEBPACK_IMPORTED_MODULE_11__components_counter_counter_component__["a" /* CounterComponent */] },
                     { path: 'fetch-data', component: __WEBPACK_IMPORTED_MODULE_10__components_fetchdata_fetchdata_component__["a" /* FetchDataComponent */] },
                     { path: '**', redirectTo: 'home' },
@@ -1915,6 +1920,7 @@ var NavMenuComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_vehicle_service__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_toasty__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(51);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1927,17 +1933,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var VehicleFormComponent = (function () {
-    function VehicleFormComponent(vehicleService, toastyService) {
+    function VehicleFormComponent(route, router, vehicleService, toastyService) {
+        var _this = this;
+        this.route = route;
+        this.router = router;
         this.vehicleService = vehicleService;
         this.toastyService = toastyService;
         this.vehicle = {
             features: [],
             contact: {}
         };
+        route.params.subscribe(function (p) {
+            _this.vehicle.id = +p['id'];
+        });
     }
     VehicleFormComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.vehicleService.getVehicle(this.vehicle.id)
+            .subscribe(function (v) {
+            _this.vehicle = v;
+        }, function (err) {
+            if (err.status == 404)
+                _this.router.navigate(['/home']);
+        });
         this.vehicleService.getMakes().subscribe(function (makes) {
             return _this.makes = makes;
         });
@@ -1969,7 +1989,9 @@ var VehicleFormComponent = (function () {
             template: __webpack_require__(33),
             styles: [__webpack_require__(42)]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_vehicle_service__["a" /* VehicleService */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_router__["ActivatedRoute"],
+            __WEBPACK_IMPORTED_MODULE_3__angular_router__["Router"],
+            __WEBPACK_IMPORTED_MODULE_1__services_vehicle_service__["a" /* VehicleService */],
             __WEBPACK_IMPORTED_MODULE_2_ng2_toasty__["ToastyService"]])
     ], VehicleFormComponent);
     return VehicleFormComponent;

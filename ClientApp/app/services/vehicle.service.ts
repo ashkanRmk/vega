@@ -12,13 +12,18 @@ export class VehicleService {
     .map(res => res.json());
   }
 
-  getMakes(){
+  getMakes() {
     return this.http.get('/api/makes')
      .map(res => res.json());
   }
 
-  create(vehicle:any){
+  create(vehicle:any) {
     return this.http.post('/api/vehicles', vehicle)
+      .map(res => res.json());
+  }
+
+  getVehicle(id:any) {
+    return this.http.get('/api/vehicles/' + id)
       .map(res => res.json());
   }
 }
