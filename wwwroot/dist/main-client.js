@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "71c9d4780786be5f8582"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "0635fd48fc81057f8fac"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -1623,7 +1623,10 @@ var AppErrorHandler = (function () {
     }
     AppErrorHandler.prototype.handleError = function (error) {
         var _this = this;
-        __WEBPACK_IMPORTED_MODULE_0_raven_js__["captureException"](error.originalError || error);
+        if (!__WEBPACK_IMPORTED_MODULE_2__angular_core__["isDevMode"])
+            __WEBPACK_IMPORTED_MODULE_0_raven_js__["captureException"](error.originalError || error);
+        else
+            throw error;
         this.ngZOne.run(function () {
             _this.toastyService.error({
                 title: 'Error',
