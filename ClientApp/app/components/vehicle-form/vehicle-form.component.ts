@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { VehicleService } from "../../services/vehicle.service";
 import { ToastyService } from "ng2-toasty";
 import { Router, ActivatedRoute } from "@angular/router";
-import { Observable } from "rxjs/Observable";
-import 'rxjs/add/Observable/forkJoin';
-import 'rxjs/add/Observable/forkJoin';
+import { Observable } from "rxjs/Rx";
 
 @Component({
   selector: 'app-vehicle-form',
