@@ -1,3 +1,5 @@
+import * as _ from 'underscore';
+import { SaveVehicle, Vehicle } from './../../models/vehicle';
 import { Component, OnInit } from '@angular/core';
 import { VehicleService } from "../../services/vehicle.service";
 import { ToastyService } from "ng2-toasty";
@@ -13,9 +15,17 @@ export class VehicleFormComponent implements OnInit {
   makes: any[];
   models: any[];
   features: any[];
-  vehicle: any = {
-    features : [],
-    contact: {}
+  vehicle: SaveVehicle = {
+    id: 0,
+    makeId: 0,
+    modelId: 0,
+    isRegistered: false,
+    features: [],
+    contact: {
+      name: '',
+      email: '',
+      phone: ''
+    }
   };
 
   constructor(
@@ -23,10 +33,10 @@ export class VehicleFormComponent implements OnInit {
     private router: Router,
     private vehicleService: VehicleService,
     private toastyService: ToastyService) {
-      route.params.subscribe(p => {
-        this.vehicle.id = +p['id'];
-      });
-     }
+    route.params.subscribe(p => {
+      this.vehicle.id = +p['id'];
+    });
+  }
 
   ngOnInit() {
     var sources = [
@@ -42,20 +52,29 @@ export class VehicleFormComponent implements OnInit {
       this.features = data[1];
 
       if (this.vehicle.id)
-        this.vehicle = data[2];
+        this.setVehicle(data[2]);
     }, err => {
       if (err.status == 404)
         this.router.navigate(['/home']);
     });
   }
 
+  private setVehicle (v: Vehicle) {
+    this.vehicle.id = v.id;
+    this.vehicle.makeId = v.make.id;
+    this.vehicle.modelId = v.model.id;
+    this.vehicle.isRegistered = v.isRegistered;
+    this.vehicle.contact = v.contact;
+    this.vehicle.features = _.pluck(v.features, 'id');
+  }
+
   onMakeChange() {
-    var selectedMake = this.makes.find(m => m.id == this.vehicle.makeId);    
-    this.models = selectedMake? selectedMake.models : [];
+    var selectedMake = this.makes.find(m => m.id == this.vehicle.makeId);
+    this.models = selectedMake ? selectedMake.models : [];
     delete this.vehicle.modelId;
   }
 
-  onFeatureToggle(featureId:any, $event:any) {
+  onFeatureToggle(featureId: any, $event: any) {
     if ($event.target.checked)
       this.vehicle.features.push(featureId);
     else {
@@ -67,6 +86,6 @@ export class VehicleFormComponent implements OnInit {
   submit() {
     this.vehicleService.create(this.vehicle)
       .subscribe(
-        x =>  console.log(x));
+      x => console.log(x));
   }
 }
