@@ -53,7 +53,7 @@ export class VehicleFormComponent implements OnInit {
 
       if (this.vehicle.id) {
         this.setVehicle(data[2]);
-        this.populateModels();        
+        this.populateModels();
       }
     }, err => {
       if (err.status == 404)
@@ -61,7 +61,7 @@ export class VehicleFormComponent implements OnInit {
     });
   }
 
-  private setVehicle (v: Vehicle) {
+  private setVehicle(v: Vehicle) {
     this.vehicle.id = v.id;
     this.vehicle.makeId = v.make.id;
     this.vehicle.modelId = v.model.id;
@@ -90,8 +90,22 @@ export class VehicleFormComponent implements OnInit {
   }
 
   submit() {
-    this.vehicleService.create(this.vehicle)
-      .subscribe(
-      x => console.log(x));
+    if (this.vehicle.id) {
+      this.vehicleService.update(this.vehicle)
+        .subscribe(x => {
+          this.toastyService.success({
+            title: 'Success',
+            msg: 'The vehicle was successfully updated.',
+            theme: 'bootstrap',
+            showClose: true,
+            timeout: 5000
+          })
+        });
+    }
+    else {
+      this.vehicleService.create(this.vehicle)
+        .subscribe(
+        x => console.log(x));
+    }
   }
 }
