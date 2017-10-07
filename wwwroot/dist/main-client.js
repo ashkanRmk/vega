@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "04d19ca8eb792debae73"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "9213aeff2c9491b48c58"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -2100,6 +2100,10 @@ var VehicleService = (function () {
     };
     VehicleService.prototype.update = function (vehicle) {
         return this.http.put('/api/vehicles/' + vehicle.id, vehicle)
+            .map(function (res) { return res.json(); });
+    };
+    VehicleService.prototype.delete = function (id) {
+        return this.http.delete('/api/vehicles/' + id)
             .map(function (res) { return res.json(); });
     };
     VehicleService = __decorate([
@@ -5052,6 +5056,15 @@ var VehicleFormComponent = (function () {
                 .subscribe(function (x) { return console.log(x); });
         }
     };
+    VehicleFormComponent.prototype.delete = function () {
+        var _this = this;
+        if (confirm("Are you sure?")) {
+            this.vehicleService.delete(this.vehicle.id)
+                .subscribe(function (x) {
+                _this.router.navigate(['/home']);
+            });
+        }
+    };
     VehicleFormComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
             selector: 'app-vehicle-form',
@@ -5470,7 +5483,7 @@ module.exports = "<div class='main-nav'>\r\n    <div class='navbar navbar-invers
 /* 91 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>New vehicle</h1>\n<p>\n    {{ vehicle | json }}\n</p>\n<form #f=\"ngForm\" (ngSubmit)=\"submit()\" novalidate>\n    <div class=\"form-group\">\n        <label for=\"make\">Make</label>\n        <select id=\"make\" class=\"form-control\" (change)=\"onMakeChange()\" [(ngModel)]=\"vehicle.makeId\" name=\"makeId\" required #make=\"ngModel\">\n            <option value=\"\"></option>\n            <option *ngFor=\"let m of makes\" value=\"{{ m.id }}\">{{ m.name }}</option>\n        </select>\n    </div>\n    <div class=\"alert alert-danger\" *ngIf=\"make.touched && !make.valid\">Please specify the make</div>\n    <div class=\"form-group\">\n        <label for=\"model\">Model</label>\n        <select id=\"model\" class=\"form-control\" [(ngModel)]=\"vehicle.modelId\" name=\"modelId\" required #model=\"ngModel\">\n            <option value=\"\"></option>\n            <option *ngFor=\"let m of models\" value=\"{{ m.id }}\">{{ m.name }}</option>\n        </select>\n    </div>\n    <div class=\"alert alert-danger\" *ngIf=\"model.touched && !model.valid\">Please specify the model</div>\n    <p>Is this vehicle registered?</p>\n    <label for=\"registered\" class=\"radio-inline\">\n        <input type=\"radio\" name=\"isRegistered\" id=\"registered\" [value]=\"true\" [(ngModel)]=\"vehicle.isRegistered\"> Yes\n    </label>\n    <label for=\"notRegistered\" class=\"radio-inline\">\n        <input type=\"radio\" name=\"isRegistered\" id=\"notRegistered\" [value]=\"false\" [(ngModel)]=\"vehicle.isRegistered\"> No\n    </label>\n    <h2>Features</h2>\n    <div *ngFor=\"let f of features\" class=\"checkbox\">\n        <label for=\"feature{{ f.id }}\">\n            <input type=\"checkbox\" id=\"feature{{ f.id }}\" (change)=\"onFeatureToggle(f.id, $event)\" [checked]=\"vehicle.features.includes(f.id)\" >{{ f.name }}\n        </label>\n    </div>\n    <h2>Contact</h2>\n    <div class=\"form-group \">\n        <label for=\"contactName\">Name</label>\n        <input id=\"contactName\" placeholder=\"Name\" type=\"text\" class=\"form-control\" [(ngModel)]=\"vehicle.contact.name\" name=\"contactName\" required #name=\"ngModel\">\n    </div>\n    <div class=\"alert alert-danger\" *ngIf=\"name.touched && !name.valid\">Please input your name</div>\n    <div class=\"form-group \">\n        <label for=\"contactPhone\">Phone</label>\n        <input id=\"contactPhone\" placeholder=\"Phone Number\" type=\"tel\" class=\"form-control\" [(ngModel)]=\"vehicle.contact.phone\" name=\"contactPhone\" required #phone=\"ngModel\">\n    </div>\n    <div class=\"alert alert-danger\" *ngIf=\"phone.touched && !phone.valid\">Please input your phone number.</div>\n    <div class=\"form-group \">\n        <label for=\"contactEmail\">E-mail</label>\n        <input id=\"contactEmail\" placeholder=\"E-mail\" type=\"email\" class=\"form-control\" [(ngModel)]=\"vehicle.contact.email\" name=\"contactEmail\">\n    </div>\n    <button class=\"btn btn-primary\" [disabled]=\"!f.valid\">Save</button>\n</form>\n<br>";
+module.exports = "<h1>New vehicle</h1>\n<p>\n    {{ vehicle | json }}\n</p>\n<form #f=\"ngForm\" (ngSubmit)=\"submit()\" novalidate>\n    <div class=\"form-group\">\n        <label for=\"make\">Make</label>\n        <select id=\"make\" class=\"form-control\" (change)=\"onMakeChange()\" [(ngModel)]=\"vehicle.makeId\" name=\"makeId\" required #make=\"ngModel\">\n            <option value=\"\"></option>\n            <option *ngFor=\"let m of makes\" value=\"{{ m.id }}\">{{ m.name }}</option>\n        </select>\n    </div>\n    <div class=\"alert alert-danger\" *ngIf=\"make.touched && !make.valid\">Please specify the make</div>\n    <div class=\"form-group\">\n        <label for=\"model\">Model</label>\n        <select id=\"model\" class=\"form-control\" [(ngModel)]=\"vehicle.modelId\" name=\"modelId\" required #model=\"ngModel\">\n            <option value=\"\"></option>\n            <option *ngFor=\"let m of models\" value=\"{{ m.id }}\">{{ m.name }}</option>\n        </select>\n    </div>\n    <div class=\"alert alert-danger\" *ngIf=\"model.touched && !model.valid\">Please specify the model</div>\n    <p>Is this vehicle registered?</p>\n    <label for=\"registered\" class=\"radio-inline\">\n        <input type=\"radio\" name=\"isRegistered\" id=\"registered\" [value]=\"true\" [(ngModel)]=\"vehicle.isRegistered\"> Yes\n    </label>\n    <label for=\"notRegistered\" class=\"radio-inline\">\n        <input type=\"radio\" name=\"isRegistered\" id=\"notRegistered\" [value]=\"false\" [(ngModel)]=\"vehicle.isRegistered\"> No\n    </label>\n    <h2>Features</h2>\n    <div *ngFor=\"let f of features\" class=\"checkbox\">\n        <label for=\"feature{{ f.id }}\">\n            <input type=\"checkbox\" id=\"feature{{ f.id }}\" (change)=\"onFeatureToggle(f.id, $event)\" [checked]=\"vehicle.features.includes(f.id)\" >{{ f.name }}\n        </label>\n    </div>\n    <h2>Contact</h2>\n    <div class=\"form-group \">\n        <label for=\"contactName\">Name</label>\n        <input id=\"contactName\" placeholder=\"Name\" type=\"text\" class=\"form-control\" [(ngModel)]=\"vehicle.contact.name\" name=\"contactName\" required #name=\"ngModel\">\n    </div>\n    <div class=\"alert alert-danger\" *ngIf=\"name.touched && !name.valid\">Please input your name</div>\n    <div class=\"form-group \">\n        <label for=\"contactPhone\">Phone</label>\n        <input id=\"contactPhone\" placeholder=\"Phone Number\" type=\"tel\" class=\"form-control\" [(ngModel)]=\"vehicle.contact.phone\" name=\"contactPhone\" required #phone=\"ngModel\">\n    </div>\n    <div class=\"alert alert-danger\" *ngIf=\"phone.touched && !phone.valid\">Please input your phone number.</div>\n    <div class=\"form-group \">\n        <label for=\"contactEmail\">E-mail</label>\n        <input id=\"contactEmail\" placeholder=\"E-mail\" type=\"email\" class=\"form-control\" [(ngModel)]=\"vehicle.contact.email\" name=\"contactEmail\">\n    </div>\n    <button class=\"btn btn-primary\" [disabled]=\"!f.valid\">Save</button>\n    <button *ngIf='vehicle.id' class=\"btn btn-danger\" type=\"button\" (click)='delete()'>Delete</button>\n</form>\n<br>";
 
 /***/ }),
 /* 92 */
