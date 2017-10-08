@@ -22,3 +22,8 @@ A sample vehicle dealer single-page application built with Angular 4, ASP.NET Co
 `$ dotnet ef database update`
 
 `$ dotnet watch run`
+
+# LICENSE
+`MIT License`
+
+Copyright (c) 2017 Ashkan Rahmani
