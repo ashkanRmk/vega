@@ -23,7 +23,7 @@ A sample vehicle dealer single-page application built with Angular 4, ASP.NET Co
 
 `$ dotnet watch run`
 
-# LICENSE
+## LICENSE
 `MIT License`
 
 Copyright (c) 2017 Ashkan Rahmani
