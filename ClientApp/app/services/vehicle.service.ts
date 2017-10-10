@@ -25,8 +25,8 @@ export class VehicleService {
      .map(res => res.json());
   }
 
-  create(vehicle:any) {
-    return this.http.post(this.vehiclesEndpoint, vehicle)
+  create(vehicle: SaveVehicle) {
+    return this.http.post("/api/vehicles", vehicle)
       .map(res => res.json());
   }
 
