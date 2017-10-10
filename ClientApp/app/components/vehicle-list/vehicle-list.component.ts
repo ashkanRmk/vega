@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class VehicleListComponent implements OnInit {
   vehicles: Vehicle[];
   makes: KeyValuePair[];
+  models: KeyValuePair[];
   filter: any = {};
 
   constructor(private vehicleservice: VehicleService) { }
@@ -17,6 +18,9 @@ export class VehicleListComponent implements OnInit {
   ngOnInit() {
     this.vehicleservice.getMakes()
       .subscribe(makes => this.makes = makes);
+
+    this.vehicleservice.getModels()
+      .subscribe(models => this.models = models);
 
     this.populateVehicle();
   }
