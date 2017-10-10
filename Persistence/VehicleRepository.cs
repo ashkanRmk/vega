@@ -60,7 +60,6 @@ namespace vega.Persistence
                 ["make"] = v => v.Model.Make.Name,
                 ["model"] = v => v.Model.Name,
                 ["contactName"] = v => v.ContactName,
-                ["id"] = v => v.Id
             };
 
             query = ApplyOrdering(queryObj, query, columnsMap);
@@ -70,6 +69,9 @@ namespace vega.Persistence
 
         private IQueryable<Vehicle> ApplyOrdering(VehicleQuery queryObj, IQueryable<Vehicle> query, Dictionary<string, Expression<Func<Vehicle, object>>> columnsMap)
         {
+            if (String.IsNullOrWhiteSpace(queryObj.SortBy) || !columnsMap.ContainsKey(queryObj.SortBy))
+                return query;
+
             if (queryObj.IsSortAscending)
                 return query.OrderBy(columnsMap[queryObj.SortBy]);
             else
