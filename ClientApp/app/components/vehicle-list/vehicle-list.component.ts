@@ -41,7 +41,7 @@ export class VehicleListComponent implements OnInit {
 
   sortBy(columName: any) {
     if (this.query.sortBy === columName) {
-      this.query.isSortAscending = false;
+      this.query.isSortAscending = !this.query.isSortAscending;
     } else {
       this.query.sortBy = columName;
       this.query.isSortAscending = true;

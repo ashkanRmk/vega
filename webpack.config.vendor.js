@@ -14,6 +14,7 @@ const treeShakableModules = [
     '@angular/router',
     'zone.js',
     'underscore',
+    'font-awesome/css/font-awesome.css',
     'raven-js'
 ];
 const nonTreeShakableModules = [
