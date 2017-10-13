@@ -1,7 +1,6 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using vega.Controllers.Resources;
@@ -9,6 +8,7 @@ using vega.Core.Models;
 using vega.Core;
 using System.Collections;
 using System.Collections.Generic;
+using AutoMapper;
 
 namespace vega.Controllers
 {

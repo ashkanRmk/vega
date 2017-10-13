@@ -25,8 +25,7 @@
       <th *ngFor="let c of columns">
         <div *ngIf="c.isSortable" (click)="sortBy(c.key)">
           {{ c.title }}
-          <i *ngIf="query.sortBy === c.key" class="fa" 
-          [class.fa-sort-asc]="query.isSortAscending" [class.fa-sort-desc]="!query.isSortAscending"></i>
+          <i *ngIf="query.sortBy === c.key" class="fa" [class.fa-sort-asc]="query.isSortAscending" [class.fa-sort-desc]="!query.isSortAscending"></i>
         </div>
         <div *ngIf="!c.isSortable">
           {{ c.title }}
@@ -46,3 +45,4 @@
     </tr>
   </tbody>
 </table>
+<pagination [total-items]="10" [page-size]="query.pageSize" (page-changed)="onPageChange($event)"></pagination> 

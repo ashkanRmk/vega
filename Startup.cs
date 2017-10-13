@@ -12,11 +12,6 @@ namespace vega
 {
     public class Startup
     {
-        // public Startup(IConfiguration configuration)
-        // {
-        //     Configuration = configuration;
-        // }
-
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
@@ -39,7 +34,8 @@ namespace vega
             
             services.AddAutoMapper();
 
-            services.AddDbContext<VegaDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
+            services.AddDbContext<VegaDbContext>(options => 
+                options.UseSqlServer(Configuration.GetConnectionString("Default")));
             
             services.AddMvc();
         }
