@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System;
+using vega.Extensions;
 
 namespace vega.Persistence
 {
@@ -40,8 +41,10 @@ namespace vega.Persistence
             context.Remove(vehicle);
         }
 
-        public async Task<IEnumerable<Vehicle>> GetVehicles(VehicleQuery queryObj)
+        public async Task<QueryResult<Vehicle>> GetVehicles(VehicleQuery queryObj)
         {
+            var result = new QueryResult<Vehicle>();
+
             var query = context.Vehicles
               .Include(v => v.Model)
                 .ThenInclude(m => m.Make)
@@ -62,20 +65,15 @@ namespace vega.Persistence
                 ["contactName"] = v => v.ContactName,
             };
 
-            query = ApplyOrdering(queryObj, query, columnsMap);
+            query = query.ApplyOrdering(queryObj, columnsMap);
 
-            return await query.ToListAsync();
-        }
+            result.TotalItems = await query.CountAsync();
 
-        private IQueryable<Vehicle> ApplyOrdering(VehicleQuery queryObj, IQueryable<Vehicle> query, Dictionary<string, Expression<Func<Vehicle, object>>> columnsMap)
-        {
-            if (String.IsNullOrWhiteSpace(queryObj.SortBy) || !columnsMap.ContainsKey(queryObj.SortBy))
-                return query;
+            query = query.ApplyPaging(queryObj);
 
-            if (queryObj.IsSortAscending)
-                return query.OrderBy(columnsMap[queryObj.SortBy]);
-            else
-                return query.OrderByDescending(columnsMap[queryObj.SortBy]);
+            result.Items = await query.ToListAsync();
+            
+            return result;
         }
 
     }

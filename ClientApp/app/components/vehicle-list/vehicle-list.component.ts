@@ -8,11 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./vehicle-list.component.css']
 })
 export class VehicleListComponent implements OnInit {
-  vehicles: Vehicle[];
+
+  private readonly PAGE_SIZE = 3;
+
+  queryResult: any = {};
   makes: KeyValuePair[];
   models: KeyValuePair[];
   query: any = {
-    pageSize: 3
+    pageSize: this.PAGE_SIZE
   };
   columns = [
     { title: 'id' },
@@ -36,16 +39,20 @@ export class VehicleListComponent implements OnInit {
 
   private populateVehicle() {
     this.vehicleservice.getVehicles(this.query)
-      .subscribe(vehicles => this.vehicles = vehicles);
+      .subscribe(result => this.queryResult = result);
   }
 
   onFilterChange() {
+    this.query.page = 1;
     this.populateVehicle();
   }
 
   resetFilter() {
-    this.query = {};
-    this.onFilterChange();
+    this.query = {
+      page: 1,
+      pageSize: this.PAGE_SIZE
+    };
+    this.populateVehicle();
   }
 
   sortBy(columName: any) {
@@ -58,7 +65,7 @@ export class VehicleListComponent implements OnInit {
     this.populateVehicle();
   }
 
-  onPageChange(page: any) {
+  onPageChange(page: number) {
     this.query.page = page;
     this.populateVehicle();
   }

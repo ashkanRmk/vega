@@ -10,6 +10,6 @@ namespace vega.Core
         Task<Vehicle> GetVehicle(int id, bool includeRelated = true);
         void AddVehicle(Vehicle vehicle);
         void DeleteVehicle(Vehicle vehicle);
-        Task<IEnumerable<Vehicle>> GetVehicles(VehicleQuery filter);
+        Task<QueryResult<Vehicle>> GetVehicles(VehicleQuery filter);
     }
 }
