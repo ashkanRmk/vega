@@ -1,10 +1,12 @@
 # Vega :car:
+
 [![Travis](https://img.shields.io/travis/rust-lang/rust.svg)]()
 [![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)]()
 
 An open-source sample vehicle dealer Single Page Application (SPA).
 
 ## Frameworks - Tools - Libraries
+
 - ASP.NET Core 2.0 and C# for cross-platform server-side code
 - Entity Framework Core 2.0 as ORM
 - Angular 4 and TypeScript for client-side code
@@ -16,12 +18,12 @@ An open-source sample vehicle dealer Single Page Application (SPA).
 
 ## Architecture
 
-* Full architecture with responsibility separation concerns, SOLID and Clean Code
-* Domain Driven Design (Layers and Domain Model Pattern)
-* Unit of Work
-* Repository and Generic Repository
+- Full architecture with responsibility separation concerns, SOLID and Clean Code
+- Domain Driven Design (Layers and Domain Model Pattern)
+- Unit of Work
+- Repository and Generic Repository
 
-## To run the project:
+## To run the project
 
 `$ npm install`
 
