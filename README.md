@@ -38,6 +38,7 @@ An open-source sample vehicle dealer Single Page Application (SPA).
 `$ dotnet watch run`
 
 ## LICENSE
-`MIT License`
 
 Copyright (c) 2017 Ashkan Rahmani
+
+The MIT License. Read [LICENSE](LICENSE) for further information.
