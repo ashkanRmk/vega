@@ -9,4 +9,4 @@ WORKDIR /vega
 
 COPY ./dockerpublish .
 
-RUN chmod -R ug+rwx /PaypingProducts
+RUN chmod -R ug+rwx /vega
